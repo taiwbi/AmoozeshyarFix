@@ -1,10 +1,3 @@
-<style>
-    * {
-        direction: rtl;
-        font-family: 'Yekan Bakh', 'YekanBakh', 'IranYekn', 'IRAN Yekan', 'IRANSansX', 'IRANSans', 'IRANSans', 'Vazirmatn', 'Vazir', 'B Nazanin', 'Tahoma',serif;
-    }
-</style>
-
 # دستیار آموزشیار
 
 این افزونه باگ سامانه آموزشیار را که باعث می‌شود در زمان انتخاب واحد، با جستجو نام دروس نتیجه‌ای یافت نشود را حل میکند.
