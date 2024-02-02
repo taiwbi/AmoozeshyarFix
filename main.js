@@ -10,7 +10,9 @@
  * NAME FROM manifest.js FILE OR ANY OTHER FILES.
  */
 
-function AddTextCorrectionEventListener(event) {
+const serchInput = document.querySelectorAll(`#__searchItems input[type="text"]`);
+
+const AddTextCorrectionEventListener = (event) => {
     if (typeof event != "undefined" && event.target.value !== '' && event.target.value.charAt(0) !== '%') {
         let text = event.target.value;
         let result = text.replaceAll("ی", "%");
@@ -30,9 +32,11 @@ function AddTextCorrectionEventListener(event) {
     return event;
 }
 
-document.addEventListener('click', (event) => {
-    document.querySelector('#__searchItems input').addEventListener('focusout', AddTextCorrectionEventListener(event));
-});
-document.addEventListener('DOMContentLoaded', (event) => {
-    document.querySelector('#__searchItems input').addEventListener('focusout', AddTextCorrectionEventListener(event));
+serchInput.forEach(element => {
+    element.addEventListener('mouseleave', (event) => {
+        AddTextCorrectionEventListener(event)
+    });
+    element.addEventListener('focusout', (event) => {
+        AddTextCorrectionEventListener(event)
+    });
 });

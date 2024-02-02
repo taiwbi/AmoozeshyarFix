@@ -1,7 +1,7 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Amoozeshyar Fix",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "Fixes search string bug in Islamic Azad University system (Amoozeshyar).",
   "icons": {
     "16": "icons/16.png",
@@ -15,7 +15,8 @@
   "content_scripts": [
     {
       "matches": [
-        "*://stdn.iau.ac.ir/*"
+        "*://stdn.iau.ac.ir/*",
+        "https://eserv.iau.ir/*"
       ],
       "js": [
         "main.js"
