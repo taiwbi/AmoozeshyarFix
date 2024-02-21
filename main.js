@@ -10,29 +10,34 @@
  * NAME FROM manifest.js FILE OR ANY OTHER FILES.
  */
 
-function AddTextCorrectionEventListener(event) {
-    if (typeof event != "undefined" && event.target.value !== '' && event.target.value.charAt(0) !== '%') {
-        let text = event.target.value;
-        let result = text.replaceAll("ی", "%");
-        result = result.replaceAll(" ", "%");
-        result = result.replaceAll("ک", "%");
-        result = result.replaceAll("ئ", "%");
-        result = result.replaceAll("ؤ", "%");
-        result = result.replaceAll("إ", "%");
-        result = result.replaceAll("أ", "%");
-        result = result.replaceAll("آ", "%");
-        result = result.replaceAll("ة", "%");
-        result = result.replaceAll("ء", "%");
-        result = result.replaceAll("‌", "%");
-        result = "%" + result + "%";
-        event.target.value = result;
-    }
-    return event;
+function TextCorrectionListener(event) {
+  if (
+    typeof event != "undefined" &&
+    event.target.value !== "" &&
+    event.target.value.charAt(0) !== "%"
+  ) {
+    let text = event.target.value;
+    let result = text.replace(/[یکئؤإأآةء‌ ]/g, "%");
+    result = "%" + result + "%";
+    event.target.value = result;
+  }
+  return event;
 }
 
-document.addEventListener('click', (event) => {
-    document.querySelector('#__searchItems input').addEventListener('focusout', AddTextCorrectionEventListener(event));
-});
-document.addEventListener('DOMContentLoaded', (event) => {
-    document.querySelector('#__searchItems input').addEventListener('focusout', AddTextCorrectionEventListener(event));
-});
+function addListeners() {
+  setInterval(() => {
+    let serchInput = document.querySelectorAll(
+      `#__searchItems input[type="text"]`,
+    );
+    serchInput.forEach((element) => {
+      element.addEventListener("mouseleave", (event) => {
+        TextCorrectionListener(event);
+      });
+      element.addEventListener("focusout", (event) => {
+        TextCorrectionListener(event);
+      });
+    });
+  }, 1000);
+}
+
+addListeners();
