@@ -13,7 +13,7 @@
 
 به علت گدا گشنه بازی گوگل و نداشتن کردیت کارت نتونستم افزونه رو روی استور کروم آپلود کنم پس باید خودتون دستی نصب کنید. :|
 
-- اول بسته افزونه کروم رو از [این لینک](https://github.com/taiwbi/AmoozeshyarFix/releases/download/release/AmoozeshyarFix.zip) دانلود و از حالت فشرده خارج کنید.
+- اول بسته افزونه کروم رو از [این لینک](https://github.com/taiwbi/AmoozeshyarFix/releases/download/release1.1/AmoozeshyarFix1.1.zip) دانلود و از حالت فشرده خارج کنید.
 - مرورگر گوگل کروم خود را باز کنید و [این لینک](chrome://extensions/) `chrome://extensions/` رو در مرورگر باز کنید
 - از سمت راست بالا گزینه developer mode رو فعال کنید.
 - سه تا گزینه براتون باز میشه، روی Load unpacked کلیک کنید.
