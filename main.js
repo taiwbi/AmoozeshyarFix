@@ -11,12 +11,13 @@
  */
 
 function TextCorrectionListener(event) {
+  let text = event.target.value;
   if (
     typeof event != "undefined" &&
     event.target.value !== "" &&
-    event.target.value.charAt(0) !== "%"
+    event.target.value.charAt(0) !== "%" &&
+    ! /^[0-9]+$/.test(text.replace(/\D/g, ''))
   ) {
-    let text = event.target.value;
     let result = text.replace(/[یکئؤإأآةء‌ ]/g, "%");
     result = "%" + result + "%";
     event.target.value = result;
